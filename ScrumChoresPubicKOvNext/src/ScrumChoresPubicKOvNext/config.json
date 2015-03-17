@@ -1,0 +1,15 @@
+{
+    "Data": {
+        "DefaultConnection": { 
+            "ConnectionString": "Server=(local);Database=aspnet5-ScrumChoresPubicKOvNext-f9930ea7-d1e7-4991-a10d-8616a1519810;Trusted_Connection=True;MultipleActiveResultSets=true"
+        }
+    },
+    "EntityFramework": {
+        "ApplicationDbContext": {
+            "ConnectionString": "Data:DefaultConnection:ConnectionString"
+        },
+        "ScrumChoresDbContext": {
+            "ConnectionString": "Data:DefaultConnection:ConnectionString"
+        }
+    }
+}

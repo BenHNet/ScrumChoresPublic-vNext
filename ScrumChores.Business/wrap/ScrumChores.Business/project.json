@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../ScrumChores.Business.csproj",
+      "bin": {
+        "assembly": "../../obj/{configuration}/ScrumChores.Business.dll",
+        "pdb": "../../obj/{configuration}/ScrumChores.Business.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "6.0.2",
+        "ScrumChores.Model": "1.0.0-*",
+        "EntityFramework.SqlServer": "1.0.0-*"
+      }
+    }
+  }
+}
