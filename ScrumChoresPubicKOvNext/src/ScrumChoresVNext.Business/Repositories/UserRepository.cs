@@ -24,7 +24,7 @@ namespace ScrumChores.Business.Repositories
             
             await _context.SaveChangesAsync();
 
-            return result;
+            return result.Entity;
         }
 
         public async Task<UserType> CreateUserType(UserType newUserType)
@@ -32,7 +32,7 @@ namespace ScrumChores.Business.Repositories
             var result = _context.UserTypes.Add(newUserType);
             await _context.SaveChangesAsync();
 
-            return result;
+            return result.Entity;
         }
 
         public async Task<UserType> GetUserType(UserType newUserType)

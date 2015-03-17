@@ -19,7 +19,7 @@ namespace ScrumChores.Business.Repositories
             
             _context.SaveChangesAsync();
 
-            return result;
+            return result.Entity;
         }
 
         public IQueryable<Sprint> GetSprintsForUser(User thisUser)

@@ -19,12 +19,14 @@ namespace ScrumChores.Business.Repositories
 
             _context.SaveChangesAsync();
 
-            return result;
+            return result.Entity;
         }
 
         public IQueryable<Model.Entities.Story> GetStoriesForUser(Model.Entities.User thisUser)
         {
-            var result = _context.Stories.Include("Sprint").AsQueryable();
+           // var result = _context.Stories.Include("Sprint").AsQueryable();
+
+            var result = _context.Stories.AsQueryable();
 
             return result;
         }

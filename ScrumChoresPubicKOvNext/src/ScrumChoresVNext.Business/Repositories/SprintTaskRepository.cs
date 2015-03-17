@@ -18,7 +18,7 @@ namespace ScrumChores.Business.Repositories
 
             _context.SaveChangesAsync();
 
-            return result;
+            return result.Entity;
         }
 
         public List<Model.Entities.SprintTask> GetSprintTasksForStory(Guid storyId)
