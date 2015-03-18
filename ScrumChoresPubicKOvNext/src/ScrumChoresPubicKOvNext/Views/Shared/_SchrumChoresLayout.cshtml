@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Chores</title>
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/blue.css" rel="stylesheet" />
+    <link href="~/css/themes/base/accordion.css" rel="stylesheet" />
+    <link href="~/css/themes/base/all.css" rel="stylesheet" />
+    <link href="~/css/themes/base/autocomplete.css" rel="stylesheet" />
+    <link href="~/css/themes/base/base.css" rel="stylesheet" />
+    <link href="~/css/themes/base/button.css" rel="stylesheet" />
+    <link href="~/css/themes/base/core.css" rel="stylesheet" />
+    <link href="~/css/themes/base/datepicker.css" rel="stylesheet" />
+    <link href="~/css/themes/base/dialog.css" rel="stylesheet" />
+    <link href="~/css/themes/base/draggable.css" rel="stylesheet" />
+    <link href="~/css/themes/base/menu.css" rel="stylesheet" />
+    <link href="~/css/themes/base/progressbar.css" rel="stylesheet" />
+    <link href="~/css/themes/base/resizable.css" rel="stylesheet" />
+    <link href="~/css/themes/base/selectable.css" rel="stylesheet" />
+    <link href="~/css/themes/base/selectmenu.css" rel="stylesheet" />
+    <link href="~/css/themes/base/slider.css" rel="stylesheet" />
+    <link href="~/css/themes/base/sortable.css" rel="stylesheet" />
+    <link href="~/css/themes/base/spinner.css" rel="stylesheet" />
+    <link href="~/css/themes/base/tabs.css" rel="stylesheet" />
+    <link href="~/css/themes/base/theme.css" rel="stylesheet" />
+    <link href="~/css/themes/base/tooltip.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("My Scrum Chores", "Home", "ScrumChores")</li>
+                        <li>@Html.ActionLink("Chore List", "ChoreList", "ScrumChores")</li>
+                        <li>@Html.ActionLink("Chore Board", "ChoreBoard", "ScrumChores")</li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+    <div class="navbar navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <p>&copy; @DateTime.Now.Year - Scrum Chores</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/knockout/knockout.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
